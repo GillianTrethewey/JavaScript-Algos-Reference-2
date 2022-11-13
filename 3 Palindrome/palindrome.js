@@ -3,10 +3,10 @@ Given a string of text, return true or false indicating whether or not the text 
 e.g palindromeChecker('racecar') // will return true
 */
 
-function palindromeChecker(text) {
+const palindromeChecker = (text) => {
   let lower = text.toLowerCase();
   return lower === lower.split("").reverse().join("");
-}
+};
 
 // function palindromeChecker(text) {
 //     var textLen = text.length;
@@ -19,6 +19,5 @@ function palindromeChecker(text) {
 //    }
 
 console.log(palindromeChecker("madam"));
-console.log(palindromeChecker("Leon Noel"));
 
 module.exports = palindromeChecker;

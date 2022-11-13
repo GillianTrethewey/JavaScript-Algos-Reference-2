@@ -1,17 +1,23 @@
 /* CHALLENGE
-Given a sentence containing two or more words, 
-return the equivalent of the sentence when capitalised. E.g
-  capSentence('the tales of scotch!') // would return 'The Tales Of Scotch!' 
+0
 */
 
-function capSentence(text) {
-  // Code goes here
-  let wordsArray = text.toLowerCase().split(" ");
-  let capsArray = wordsArray.map((word) => {
-    return word[0].toUpperCase() + word.slice(1);
-  });
-  return capsArray.join(" ");
-}
+// function capSentence(text) {
+//   // Code goes here
+//   let wordsArray = text.toLowerCase().split(" ");
+//   let capsArray = wordsArray.map((word) => {
+//     return word[0].toUpperCase() + word.slice(1);
+//   });
+//   return capsArray.join(" ");
+// }
+
+const capSentence = (text) => {
+  return text
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
+};
 
 console.log(capSentence("the tales of scotch!")); // would return 'The Tales Of Scotch!')
 

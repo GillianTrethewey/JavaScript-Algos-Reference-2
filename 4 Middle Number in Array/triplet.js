@@ -14,9 +14,17 @@ gimme([5, 10, 14]) => 1
 
 */
 
-const triplet = (arr) => {
-  return arr.indexOf([...arr].sort((a, b) => a - b)[1]);
+// const triplet = (arr) => {
+//   return arr.indexOf([...arr].sort((a, b) => a - b)[1]);
+// };
+
+const gimme = (triplet) => {
+  return triplet.indexOf(
+    triplet.find(
+      (el) => el !== Math.min(...triplet) && el !== Math.min(...triplet)
+    )
+  );
 };
 
-console.log(triplet([5, 10, 14])); // expected is 1
-console.log(triplet([2, 3, 1])); // expected is 0
+console.log(gimme([5, 10, 14])); // expected is 1
+console.log(gimme([2, 3, 1])); // expected is 0

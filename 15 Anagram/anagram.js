@@ -10,8 +10,10 @@ const isAnagram = (stringA, stringB) => {
 
   return stringA
     .split("")
+    .sort()
     .map((e) => stringB.includes(e))
     .every((e) => e === true);
 };
 
 console.log(isAnagram("silent", "listen")); //expected true
+console.log(isAnagram("sillent", "listenl")); //expected true

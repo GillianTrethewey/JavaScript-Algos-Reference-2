@@ -19,8 +19,32 @@ const dup = (arr) => {
   );
 };
 
+// SECOND METHOD WITH HELPER FUNCTION
+const helper = (e) => {
+  return e
+    .split("")
+    .filter((e, i, a) => e !== a[i - 1])
+    .join("");
+};
+
+const dup1 = (arr) => {
+  return arr.map(helper);
+};
+
+// THIRD METHOD WITH NESTED HELPER FUNCTION
+
+const dup2 = (arr) => {
+  const helper = (e) => {
+    return e
+      .split("")
+      .filter((e, i, a) => e !== a[i - 1])
+      .join("");
+  };
+  return arr.map(helper);
+};
+
 console.log(
-  dup(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])
+  dup2(["ccooddddddewwwaaaaarrrrsssss", "piccaninny", "hubbubbubboo"])
 );
 // ['codewars','picaniny','hubububo']
 console.log(dup(["abracadabra", "allottee", "assessee"])); // ['abracadabra','alote','asese']

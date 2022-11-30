@@ -1,3 +1,7 @@
+/* Given a number, find the next biggest number that could be created using the same digits.
+For example, 12 would be 21, 2017 would be 2071.
+*/
+
 const nextBigger = (n) => {
   let arr = n.toString().split("");
   let i = arr.length - 1;
